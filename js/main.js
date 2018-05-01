@@ -39,4 +39,34 @@ code[1] = `
     transform: translate(0%,-150%);
 }`
 
+code[2] = `
+@keyframes bouncing-loader {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0.1;
+    transform: translateY(-1rem);
+  }
+}
+.bouncing-loader{
+    display: flex;
+}
+.bouncing-loader > div{
+    width: 1rem;
+    height: 1rem;
+    margin: 3rem 0.2rem;
+    background: rgba(255, 0, 0, 0.2);;
+    border-radius: 50%;
+    animation: bouncing-loader 0.6s infinite alternate;
+}
+
+.bouncing-loader > div:nth-child(2){
+    animation-delay: 0.2s;
+}
+.bouncing-loader > div:nth-child(3){
+    animation-delay: 0.4s;
+}`
+
 writeCode(code)
