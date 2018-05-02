@@ -68,5 +68,20 @@ code[2] = `
 .bouncing-loader > div:nth-child(3){
     animation-delay: 0.4s;
 }`
+code[3]=`
+.alphabetc {
+    width: 100px;
+    height: 140px;
+    border-radius: 50%; 
+    border: 1em solid rgba(255, 0, 0, 0.2);
+}
+.alphabetc::after {
+    content: '';
+    width: 100px;
+    height: 100px;
+    transform: translate(60%, 0%) rotate(45deg);
+    background: #fff;
+    display: block;
+}`
 
 writeCode(code)
