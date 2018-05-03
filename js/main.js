@@ -78,10 +78,27 @@ code[3]=`
 .alphabetc::after {
     content: '';
     width: 100px;
-    height: 100px;
-    transform: translate(60%, 0%) rotate(45deg);
+    height: 50px;
+    transform: translate(60%, 59%);
     background: #fff;
     display: block;
 }`
-
+code[4] = `
+.scalediv{
+    width: 140px;
+    height: 140px;
+    background:rgba(255, 0, 0, 0.2);
+    animation: scale 1s infinite ease-in-out;
+}
+@keyframes scale {
+  0% {
+            transform: scale(1);
+    opacity: 1; }
+  45% {
+            transform: scale(0.1);
+    opacity: 0.7; }
+  80% {
+            transform: scale(1);
+    opacity: 1; } 
+}`
 writeCode(code)
