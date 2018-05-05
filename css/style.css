@@ -1,8 +1,5 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* 默认样式*/
+*{margin: 0;padding: 0;box-sizing: border-box;}
 .wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -16,6 +13,27 @@
     width: 50%;
     height: 100%;
 }
+.info{
+    /* position: relative; */
+    word-wrap: none;
+    white-space: nowrap;
+}
+.information{
+    padding: 5px;
+    /* position: absolute; */
+    background: rgba(255, 0, 0, 0.2);
+    border-left: 5px solid greenyellow;
+    margin: 20px;
+}
+/* .information:nth-child(2){
+    top: 42px;
+} */
+.csswrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .code{
     display: flex;
     flex-wrap: wrap;
@@ -28,33 +46,23 @@
 .code > pre {
     margin: 10px;
 }
-/* clearfix::after{
-    content: '';
-    clear: both;
-    display: block;
-} */
-.info{
-    position: relative;
-    height: 100px;
-    word-wrap: none;
-    white-space: nowrap;
+/* 宽小于 650px */
+@media (max-width: 650px) {
+    .wrapper {
+        height: 900px;
+    }
+    .exhibit{
+        width: 100%;
+        height: 50%;
+    }
+    .code{
+        width: 100%;
+        height: 50%;
+        background: rgba(55, 0, 0, 0.2)
+    }
 }
-.information{
-    padding: 5px;
-    position: absolute;
-    background: rgba(255, 0, 0, 0.2);
-    border-left: 5px solid greenyellow;
-    margin: 20px;
-}
-.information:nth-child(2){
-    top: 42px;
-}
-.csswrapper{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+/* code 样式 */
+
 .heart{
     height: 70px;
     width: 140px;
@@ -85,20 +93,7 @@
 .heartShape:after{
     transform: translate(0%,-150%);
 }
-@media (max-width: 650px) {
-    .wrapper {
-        height: 900px;
-    }
-    .exhibit{
-        width: 100%;
-        height: 50%;
-    }
-    .code{
-        width: 100%;
-        height: 50%;
-        background: rgba(55, 0, 0, 0.2)
-    }
-}
+
 
 @keyframes bouncing-loader {
   from {
@@ -159,4 +154,58 @@
   80% {
             transform: scale(1);
     opacity: 1; } 
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+    opacity: 1; }
+  45% {
+    transform: scale(0.1);
+    opacity: 0.7; }
+  80% {
+    transform: scale(1);
+    opacity: 1; } }
+
+.ball-pulse > div:nth-child(0) {
+  animation: scale 0.75s -0.36s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }
+
+.ball-pulse > div:nth-child(1) {
+  animation: scale 0.75s -0.24s infinite }
+
+.ball-pulse > div:nth-child(2) {
+  animation: scale 0.75s -0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }
+
+.ball-pulse > div:nth-child(3) {
+  animation: scale 0.75s 0s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }
+
+.ball-pulse > div {
+  background-color: rgba(255, 0, 0, 0.2);
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  margin: 0.5em;
+  animation-fill-mode: both;
+  display: inline-block; }
+
+@keyframes square-spin {
+  25% {
+    transform: perspective(100px) rotateX(180deg) rotateY(0);
+  }
+  50% {
+    transform: perspective(100px) rotateX(180deg) rotateY(180deg);
+  }
+  75% {
+    transform: perspective(100px) rotateX(0) rotateY(180deg);
+  }
+  100% {
+    transform: perspective(100px) rotateX(0) rotateY(0);
+  }
+}
+
+.square-spin {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 0, 0, 0.2);
+    animation: square-spin 3s 0s cubic-bezier(.09,.57,.49,.9) infinite;
 }
